@@ -2,7 +2,10 @@
     <div class="wrapper">
         <a class="link" href="#">
             <div class="perspective">
-                <div class="main"><i class="bi bi-slack"></i></div>
+                <div class="main" >
+                    <i class="bi bi-slack">
+                    </i>
+                </div>
                 <div class="second"></div>
                 <div class="third"></div>
                 <div class="four"></div>
@@ -106,6 +109,9 @@ export default {
         top: -75px;
         left: 40px;
         background-color: #432875;
+        // background: rgb(238,174,202);
+        // background: radial-gradient(circle, rgb(207 44 150) 0%, rgb(126 37 126) 100%);
+        animation: gradient 4s infinite linear;
         opacity: 0.85;
         ~.second{
             top: -55px;
@@ -236,10 +242,50 @@ export default {
 
 
 
+////keyframes
+@keyframes gradient{
+    0%{
+        background-color: #5b4681;
+        background: radial-gradient(235deg, #7647cc, 0%, #5a34a0, 100%);
+        transform: rotate(0deg) translateZ(16px);
+        opacity: 0.75;
+    }
+    25%{
+        background-color: #5b4681;
+        background: radial-gradient(235deg, #7647cc, 0%, #5a34a0, 100%);
+        transform: rotate(2deg) translateZ(16px);
+        opacity: 0.8;
+    }
+    50%{
+        background-color: #4b2592;
+        background: radial-gradient(235deg, #7547ca, 0%, #3f1d7e, 100%);
+        transform: rotate(0deg) translateZ(16px);
+        opacity: 0.75;
+    }
+    75%{
+        background-color: #6946aa;
+        background: radial-gradient(235deg, #4e2d8b, 0%, #531fb4, 100%);
+        transform: rotate(-2deg) translateZ(16px);
+        opacity: 0.8;
+    }
+    100%{
+        background-color: #5b4681;
+        background: radial-gradient(235deg, #7647cc, 0%, #5a34a0, 100%);
+        transform: rotate(0deg) translateZ(16px);
+        opacity: 0.75;
+    }
+}
+
+
+
+
+
+
+
+////media adaptation
 @media (max-width: 576px) {
   .wrapper{
-    // flex-direction: column;
-    // row-gap: 10px;
+    row-gap: 10px;
   }
   .perspective{
     width: 50px;
