@@ -6,6 +6,7 @@
                 <div class="second"></div>
                 <div class="third"></div>
                 <div class="four"></div>
+                <div class="place"></div>
                 <div class="bottom"></div>
                 <div class="left"></div>
             </div>
@@ -16,6 +17,7 @@
                 <div class="second"></div>
                 <div class="third"></div>
                 <div class="four"></div>
+                <div class="place"></div>
                 <div class="bottom"></div>
                 <div class="left"></div>
             </div>
@@ -26,6 +28,7 @@
                 <div class="second"></div>
                 <div class="third"></div>
                 <div class="four"></div>
+                <div class="place"></div>
                 <div class="bottom"></div>
                 <div class="left"></div>
             </div>
@@ -75,7 +78,7 @@ export default {
     display: inline-block;
     transition: 0.2s all;
     &:hover{
-        box-shadow: none;
+        // box-shadow: none;
     }
 
 }
@@ -101,36 +104,36 @@ export default {
     }
     &:hover{
         top: -75px;
-        left: 45px;
+        left: 40px;
         background-color: #432875;
-        opacity: 0.9;
+        opacity: 0.85;
         ~.second{
             top: -55px;
-            left: 35px;
+            left: 30px;
             background-color: #7c0f7c;
-            opacity: 0.8;
+            opacity: 0.7;
         }
         ~.third{
             top: -35px;
-            left: 25px;
+            left: 20px;
             background-color: #4e1a4e;
-            opacity: 0.8;
+            opacity: 0.65;
         }
         ~.four{
             top: -15px;
-            left: 15px;
+            left: 10px;
             background-color: #3b193b;
             box-shadow: -4px 4px 25px #000;
-            opacity: 0.8;
+            opacity: 0.6;
         }
         ~.left{
-            opacity: 0;
+            // opacity: 0;
         }
         ~.bottom{
-            opacity: 0;
+            // opacity: 0;
         }
         ~.perspective{
-            box-shadow: none;
+            // box-shadow: none;
         }
     }
     
@@ -180,7 +183,20 @@ export default {
     z-index: 1;  
     
 }
-
+.place{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 200px;
+    transform: translateZ(16px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(44 35 44 / 98%);
+    transition: 0.5s all;  
+    z-index: 0;  
+}
 
 
 
@@ -215,5 +231,59 @@ export default {
     width: 100%;
     height: 200px;
     left: 0px;
+}
+
+
+
+
+@media (max-width: 576px) {
+  .wrapper{
+    // flex-direction: column;
+    // row-gap: 10px;
+  }
+  .perspective{
+    width: 50px;
+    height: 100px;
+  }
+  .main{
+    width: 50px;
+    height: 100px;
+    i{
+        font-size: 25px;
+    }
+  }
+
+    .second{
+        width: 50px;
+        height: 100px;
+    }
+    .third {
+        width: 50px;
+        height: 100px;
+    }
+    .four {
+        width: 50px;
+        height: 100px;
+    }
+    .place{
+        width: 50px;
+        height: 100px;
+    }
+
+    .bottom,
+    .left {
+        position: absolute;
+        width: 50px;
+        height: 100px;
+    }
+    .bottom{
+        transform: rotateX(90deg) translateY(15px) translateZ(-86px);
+        width: 50px;
+        height: 12px;
+    }
+    .left{
+        transform: rotateY(270deg) translateX(4px); 
+        width: 12px;
+    }
 }
 </style>
