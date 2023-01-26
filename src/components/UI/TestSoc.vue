@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        
+        {{enter}}
         <a class="link" href="#">
             <div @mouseenter="enter = true, id = 1" @mouseleave="enter = false, id = 0" class="perspective">
                 <div  class="main" :class="{MainHover: enter === true && id === 1}" >
