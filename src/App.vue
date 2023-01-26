@@ -32,7 +32,9 @@ html{
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  
+  &:focus{
+    outline: none;
+  }
 }
 
 .main{
@@ -42,6 +44,14 @@ html{
 .test{
   display: flex;
   justify-content: center
+}
+
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
 }
 
 

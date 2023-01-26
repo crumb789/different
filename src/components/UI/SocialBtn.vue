@@ -338,5 +338,10 @@ export default {
         transform: rotateY(270deg) translateX(4px); 
         width: 12px;
     }
+
+    .MainHover{
+        top: -65px ; 
+        left: 40px;
+    }
 }
 </style>
