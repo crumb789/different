@@ -340,8 +340,20 @@ export default {
     }
 
     .MainHover{
-        top: -65px ; 
-        left: 40px;
+        top: -40px ; 
+        left: 26px;
+    }
+    .SecondHover{
+        top: -30px !important; 
+        left: 20px !important;
+    }
+    .ThirdHover{
+        top: -20px !important; 
+        left: 12.5px !important;
+    }
+    .FourHover{
+        top: -10px !important; 
+        left: 8px !important;
     }
 }
 </style>
