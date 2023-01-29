@@ -2,12 +2,23 @@
   <section class="main">
     <social-btn></social-btn>
   </section>
+  <section class="section-second">
+    <buttons-bar></buttons-bar>
+  </section>
+
+
   <section class="test">
+    <!-- <test-soc></test-soc> -->
   </section>
 </template>
 
 <script>
 import SocialBtn from './components/UI/SocialBtn.vue'
+import ButtonsBar from './components/UI/ButtonsBar.vue'
+
+
+// import TestSoc from './components/UI/TestSoc.vue'
+
 
 
 
@@ -16,6 +27,8 @@ export default {
   name: 'App',
   components: {
     SocialBtn,
+    // TestSoc,
+    ButtonsBar,
   }
 }
 </script>
@@ -38,6 +51,11 @@ html{
 }
 
 .main{
+  display: flex;
+  justify-content: center
+}
+.section-second{
+  margin-top: 80px;
   display: flex;
   justify-content: center
 }
