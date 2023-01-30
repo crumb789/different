@@ -10,7 +10,8 @@
                     <i :class="li.icon " >
                     </i>
                     <div  class="btns-descr">
-                        <p :class="{descrActive: li.id === activeiId }">{{li.descr}}</p>
+                        <p v-if="li.descr === 'Fold'" style="margin-left: -2px" :class="{descrActive: li.id === activeiId }">{{li.descr}}</p>
+                        <p v-else :class="{descrActive: li.id === activeiId }">{{li.descr}}</p>
                     </div>
 
                     <div class="wrapper-buble">
@@ -122,7 +123,7 @@ export default {
 .buble{
     position: absolute;
     top: 50px;
-    background-color: #f1bf1c;
+    background-color: #3c4eab;
     border-radius: 100% 100% 0 0 ;
     transition: 0.3s all;
     z-index: 1;
@@ -150,14 +151,14 @@ export default {
     height: 45px;
     left: -12px;
     border-radius: 0;
-    background-color: #f1bf1c;
+    background-color: #3c4eab;
 }
 .bubleMainActive{
     display: block;
     width: 50px;
     height: 50px;
     top: 9px;
-    background-color: #f1bf1c;
+    background-color: #3c4eab;
 
 }
 
@@ -179,7 +180,7 @@ export default {
 .active{
     transition: 0.3s all;
     i{
-        color: rgb(241, 191, 28);
+        color: #3c4eab;
     }
 }
 

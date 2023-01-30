@@ -6,6 +6,10 @@
     <buttons-bar></buttons-bar>
   </section>
 
+  <section class="colors">
+    <color-blur></color-blur>
+  </section>
+
 
   <section class="test">
     <!-- <test-soc></test-soc> -->
@@ -15,6 +19,8 @@
 <script>
 import SocialBtn from './components/UI/SocialBtn.vue'
 import ButtonsBar from './components/UI/ButtonsBar.vue'
+import ColorBlur from './components/ColorBlur.vue'
+
 
 
 // import TestSoc from './components/UI/TestSoc.vue'
@@ -29,6 +35,7 @@ export default {
     SocialBtn,
     // TestSoc,
     ButtonsBar,
+    ColorBlur,
   }
 }
 </script>
@@ -59,6 +66,12 @@ html{
   display: flex;
   justify-content: center
 }
+.colors{
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
 .test{
   display: flex;
   justify-content: center
