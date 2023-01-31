@@ -10,6 +10,9 @@
     <color-blur></color-blur>
   </section>
 
+  <section class="toggle">
+    <agr-toggle></agr-toggle>
+  </section>
 
   <section class="test">
     <!-- <test-soc></test-soc> -->
@@ -20,6 +23,7 @@
 import SocialBtn from './components/UI/SocialBtn.vue'
 import ButtonsBar from './components/UI/ButtonsBar.vue'
 import ColorBlur from './components/ColorBlur.vue'
+import AgrToggle from './components/UI/AgrToggle.vue'
 
 
 
@@ -36,12 +40,14 @@ export default {
     // TestSoc,
     ButtonsBar,
     ColorBlur,
+    AgrToggle,
   }
 }
 </script>
 
 <style lang="scss">
 html{
+  box-sizing: border-box;
   background-color: #312d36;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%235d00f3' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }
@@ -52,6 +58,8 @@ html{
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  padding-bottom: 100px;
+  box-sizing: border-box;
   &:focus{
     outline: none;
   }
@@ -75,6 +83,13 @@ html{
 .test{
   display: flex;
   justify-content: center
+}
+
+.toggle{
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  
 }
 
 input,
