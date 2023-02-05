@@ -1,5 +1,9 @@
 <template>
     <div class="wrapper">
+        <div v-if="!acceptFromApp" class="notice">
+            <p>Change colors when blur is disabled.</p>
+            <p  @click="submitNotice">Okey</p>
+        </div>
         <form action="">
             <div @click="toggle = !toggle, emitToParent(toggle)"  class="check" 
             :class="{rotateCheck: toggle, rotateCheckBack: toggle === false }" title="Blur Colors">
@@ -14,22 +18,54 @@
 
 <script>
 export default {
+    name:'agressive-toggle',
+    props:{
+        acceptFromApp:{
+            type: Boolean
+        }
+    },
     data() {
         return{
-            toggle: true
+            toggle: true,
+            noticeAccept: false
         }
     },
     methods:{
         emitToParent(){
             this.$emit('agressive-toggle', this.toggle)
+        },
+        submitNotice(){
+            this.noticeAccept = true
+            this.$emit('accept-global', true)
         }
-    }
+    },
 }
 </script>
 
 <style lang="scss" scoped>
 .wrapper{
-
+    position: relative;
+}
+.notice{
+    position: absolute;
+    background-color: aliceblue;
+    width: 300px;
+    left: -25%;
+    transform: translateX(-25%);
+    bottom: 50px;
+    border: 1px dotted #000000;
+    border-radius: 5px;
+    p{
+        &:nth-child(2){
+            background-color: #df4848;
+            padding: 5px ;
+            margin: 0px 75px 5px;
+            border-radius: 3px;
+            color: #363636;
+            font-weight: 700;
+            cursor: pointer;
+        }
+    }
 }
 .check{
     position: relative;

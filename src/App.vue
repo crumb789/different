@@ -11,7 +11,12 @@
   </section>
 
   <section class="toggle">
-    <agr-toggle @agressive-toggle='changeToggle' ></agr-toggle>
+    <agr-toggle 
+      @agressive-toggle='changeToggle' 
+      @accept-global='submitAccept'
+      :acceptFromApp='acceptFromApp'
+      >
+      </agr-toggle>
   </section>
 
   <section class="test">
@@ -44,15 +49,34 @@ export default {
   },
   data(){
       return{
-        Toggle: true
+        Toggle: true,
+        acceptFromApp: false,
       }
     },
     methods:{
       changeToggle(newToggle){
         this.Toggle = newToggle
-        console.log(newToggle)
+      },
+      submitAccept(value){
+        console.log('submit')
+        console.log(value)
+        this.acceptFromApp = value
       }
-    }
+    },
+    mounted(){
+        if(sessionStorage.acceptFromApp){
+            this.acceptFromApp = JSON.parse(sessionStorage.acceptFromApp)
+        }
+    },  
+    watch:{
+        acceptFromApp:{
+            handler(newValue){
+                sessionStorage.acceptFromApp= JSON.stringify(newValue)
+            },
+            deep: true
+        },
+    },
+
   }
 
 
