@@ -117,4 +117,11 @@ a {
 }
 
 
+@media (max-width: 576px) {
+  .toggle{
+    margin-top: 40px;
+  }
+
+}
+
 </style>
