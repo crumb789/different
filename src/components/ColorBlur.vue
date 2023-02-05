@@ -130,6 +130,9 @@ export default {
         grid-template-columns: 140px 140px;
         gap: 5px;
     }
+    .wrapper{
+        margin-top: 40px;
+    }
     .box{
         width: 98%;
         flex-direction: column;
