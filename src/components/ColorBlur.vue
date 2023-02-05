@@ -123,7 +123,8 @@ export default {
 
 @media (max-width: 576px) {
     .wrapper-colors{
-        display: grid;
+        // display: grid;
+        display: none;
         max-width: 720px;
         grid-template-rows: 104px 104px ;
         grid-template-columns: 140px 140px;
