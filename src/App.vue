@@ -7,11 +7,11 @@
   </section>
 
   <section class="colors">
-    <color-blur></color-blur>
+    <color-blur :toggle='Toggle'></color-blur>
   </section>
 
   <section class="toggle">
-    <agr-toggle></agr-toggle>
+    <agr-toggle @agressive-toggle='changeToggle' ></agr-toggle>
   </section>
 
   <section class="test">
@@ -41,11 +41,27 @@ export default {
     ButtonsBar,
     ColorBlur,
     AgrToggle,
+  },
+  data(){
+      return{
+        Toggle: true
+      }
+    },
+    methods:{
+      changeToggle(newToggle){
+        this.Toggle = newToggle
+        console.log(newToggle)
+      }
+    }
   }
-}
+
+
 </script>
 
 <style lang="scss">
+*{
+  box-sizing: border-box;
+}
 html{
   box-sizing: border-box;
   background-color: #312d36;
@@ -86,7 +102,6 @@ html{
 }
 
 .toggle{
-  margin-top: 80px;
   display: flex;
   justify-content: center;
   

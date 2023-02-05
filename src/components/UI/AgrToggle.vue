@@ -1,7 +1,8 @@
 <template>
     <div class="wrapper">
         <form action="">
-            <div @click="toggle = !toggle"  class="check" :class="{rotateCheck: toggle, rotateCheckBack: toggle === false }">
+            <div @click="toggle = !toggle, emitToParent(toggle)"  class="check" 
+            :class="{rotateCheck: toggle, rotateCheckBack: toggle === false }" title="Blur Colors">
                 <div :class="{trueToggle: toggle, falseToggle: toggle === false }" class="dot">
                 </div>
                 <div class="phantom" :class="{rotatePhantom: toggle, rotatePhantomBack: toggle === false }">
@@ -15,9 +16,14 @@
 export default {
     data() {
         return{
-            toggle: undefined
+            toggle: true
         }
     },
+    methods:{
+        emitToParent(){
+            this.$emit('agressive-toggle', this.toggle)
+        }
+    }
 }
 </script>
 
@@ -27,7 +33,6 @@ export default {
 }
 .check{
     position: relative;
-    box-sizing: border-box;
     width: 100px;
     height: 30px;
     // background-color: rgb(14, 105, 105);
@@ -41,7 +46,6 @@ export default {
 }
 .dot{
     position: absolute;
-    box-sizing: border-box;
     height: 26px;
     width: 26px;
     left: 2px;
@@ -58,7 +62,6 @@ export default {
 .phantom{
     // display: none;
     position: absolute;
-    box-sizing: border-box;
     z-index: 1;
     width: 100px;
     height: 30px;

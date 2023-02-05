@@ -3,55 +3,56 @@
 
         <div class="wrapper-result">
             <ul :class="{blurActive: blurBox === true}">
-                <li :style="{backgroundColor: topLeft}"></li>
-                <li :style="{backgroundColor: topRight}"></li>
-                <li :style="{backgroundColor: bottomLeft}"></li>
-                <li :style="{backgroundColor: bottomRight}"></li>
+                <li >
+                    <input type="color" v-model="topLeft" :style="{backgroundColor: topLeft}">
+                </li>
+                <li >
+                    <input type="color" v-model="topRight" :style="{backgroundColor: topRight}">
+                </li>
+                <li >
+                    <input type="color" v-model="bottomLeft" :style="{backgroundColor: bottomLeft}">
+                </li>
+                <li >
+                    <input type="color" v-model="bottomRight" :style="{backgroundColor: bottomRight}">
+                </li>
             </ul>
         </div>
 
 
         <form action="#" class="wrapper-colors">
-            <div class="box">
-                <label for="topLeft"> Top Left</label>
-                <input type="color" v-model="topLeft">
-            </div>
-            
-            <div class="box">
-                <label for="topRight"> Top Right</label>
-                <input type="color" v-model="topRight">
-            </div>
-
-            <div class="box">
-                <label for="bottomLeft"> Bottom Left</label>    
-                <input type="color" v-model="bottomLeft">
-            </div>
-
-            <div class="box">
-                <label for="bottomRight"> Bottom Right</label>
-                <input type="color" v-model="bottomRight">
-            </div>
-
-            <div class="box">
-                <label for="blurBox"> Blur </label>
-                <input type="checkbox" v-model="blurBox">
-            </div>
 
         </form>
     </div>
 </template>
 
 <script>
+
 export default {
+  components: { 
+
+    },
+    props:{
+        toggle:{
+            type: Boolean
+        }
+    },
     data() {
         return{
             topLeft: '#fff3ff',
             topRight: '#1cb72c',
             bottomLeft: '#911b1b',
             bottomRight: '#a2b71c',
-            blurBox: true,
+            // blurBox: true,
         }
     },
+    methods:{
+
+    },
+    computed:{
+        blurBox(){
+        return this.toggle
+        }
+    }
 }
 </script>
 
@@ -86,6 +87,14 @@ export default {
             height: 100%;
             width: 100%;
             list-style-type: none;
+            input{
+                cursor: pointer;
+                width: 100%;
+                height: 100%;
+                border: none;
+                padding: 0;
+                outline: none;
+            }
         }
 
     }
